@@ -11,4 +11,6 @@ Java sandbox game experiment.
 | keyboard 's'  | Wall     |
 | mousebutton 1 | Snow     |
 | mousebutton 2 | Water    |
-| mousebutton 3 | Clear    |
+| mousebutton 3 | Clear*   |
+
+*Clear only affects the area underneath the cursor.
