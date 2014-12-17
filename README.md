@@ -3,6 +3,11 @@ java-game
 
 Java sandbox game experiment.
 
-| Command | Action      |
--------------------------
-| moi     | pitää mennä |
+Functions:
+=======
+
+| Function    | Action                  |
+| ----------- | :-----------------------|
+| !date       | Prints the current time |
+| !greet user | Prints "Hello user"     |
+| !quit       | Terminates the program  |
