@@ -16,8 +16,8 @@ import javax.swing.JPanel;
 public class Game extends Canvas implements Runnable{
 	private JPanel p;
 	private Graphics g;
-	public static int width = 600;
-	public static int height = 500;
+	public static final int width = 600;
+	public static final int height = 500;
 	private JFrame frame;
 	Thread thread;
 	
@@ -33,10 +33,6 @@ public class Game extends Canvas implements Runnable{
 	public int[] movement = new int[width * height];
 	
 	
-	
-	
-	
-	
 	public void draw() {
 		BufferStrategy bs = getBufferStrategy();
 	    if (bs == null){
@@ -49,6 +45,8 @@ public class Game extends Canvas implements Runnable{
 	    g.dispose();
 	    bs.show();
 	}
+
+    private void reinitialize(){ boxes = new byte[width * height]; }
 
 	
 	public enum boxType{
@@ -138,7 +136,7 @@ public class Game extends Canvas implements Runnable{
 
 			@Override
 			public void keyTyped(KeyEvent e) {
-				if(e.getKeyChar()=='s'){
+				if(e.getKeyChar() == 's'){
 					for (int y = 0; y < 15; y++) {
 						for (int x = 0; x < 15; x++) {
 							if (x+1+mX < Game.width && y+1+mY < Game.height&&y+mY>0&&x+mX>0) {
@@ -156,9 +154,13 @@ public class Game extends Canvas implements Runnable{
 						}
 					}
 				}
-				else if(e.getKeyChar()=='r')
+				else if(e.getKeyChar() == 'r')
 					snowRain =! snowRain;
-				
+
+                else if(e.getKeyChar() == 'c'){
+                    //boxes = new byte[width * height];
+                    reinitialize();
+                }
 			}
 			
 		});
